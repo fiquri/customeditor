@@ -10,6 +10,24 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <style>
+        .note-editable{
+            font-size: 14px;
+        }
+        .note-editable p{
+            margin-bottom: 12px;
+        }
+        .custom-title h1,h1.custom-title {
+            font-size: 15px;
+            text-align: center;
+        }
+        .custom-caption *, .custom-caption{
+            font-size: 12px;
+        }
+        .custom-caption + .custom-caption{
+            margin-top: -12px;
+        }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -32,8 +50,6 @@
         height: 500,
         inheritPlaceholder: true,
         focus: true,
-        codeviewFilter: false,
-        codeviewIframeFilter: true,
         toolbar: [
             // [groupName, [list of button]]
             ['format',['style']],
@@ -47,6 +63,7 @@
                 { title: 'Caption', tag: 'p', className: 'custom-caption', value: 'p' },
             ],
         });
+
 
         var code = $('#summernote').summernote('code');
         $('.note-editable').keyup(function() {
